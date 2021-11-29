@@ -2,6 +2,7 @@
 def hanoi(n_disks):
     """Number of moves to move n_disks
     in the tower of Hanoi problem
+    Closed Form: hanoi(n_disks) = 2^n_disks - 1
     """
     if n_disks == 0:
         return 0
