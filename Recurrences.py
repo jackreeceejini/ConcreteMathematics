@@ -27,11 +27,43 @@ def regions_in_plane(n_lines):
         return 1
     return regions_in_plane(n_lines - 1) + n_lines
 
-if __name__ == "__main__":
-  print("regions_in_plane: ", regions_in_plane(0))
-  print("regions_in_plane: ", regions_in_plane(1))
-  print("regions_in_plane: ", regions_in_plane(2))
-  print("regions_in_plane: ", regions_in_plane(3))
-  print("regions_in_plane: ", regions_in_plane(4))
-  print("regions_in_plane: ", regions_in_plane(7))
+
+# print("regions_in_plane: ", regions_in_plane(0))
+# print("regions_in_plane: ", regions_in_plane(1))
+# print("regions_in_plane: ", regions_in_plane(2))
+# print("regions_in_plane: ", regions_in_plane(3))
+# print("regions_in_plane: ", regions_in_plane(4))
+# print("regions_in_plane: ", regions_in_plane(7))
+
+def josephus(n_people):
+    """
+    Simply stated how many people are
+    left in a circle of n_people
+    after the elimination of every kth person
+    Closed form: josephus(2^m + L) = 2L + 1
+    where L = n_people - 2 ^ m
+    where m is the largest power such that 2 ^ m
+    is not greater than n_people.
+
+    Example:
+    josephus(100) = 2 * 36 + 1 = 73
+    100 =  2 * 6 + 36 where m = 6 and L = 100 - 2 ^ 6
+    """
+    if n_people == 1:
+        return 1
+    if n_people % 2 == 0:
+        return 2 * josephus(n_people//2) - 1
+    else:
+        return 2 * josephus(n_people//2) + 1
+
+
+# print("josephus(n_people): ", josephus(1))
+# print("josephus(n_people): ", josephus(2))
+# print("josephus(n_people): ", josephus(3))
+# print("josephus(n_people): ", josephus(4))
+# print("josephus(n_people): ", josephus(5))
+# print("josephus(n_people): ", josephus(6))
+# print("josephus(n_people): ", josephus(7))
+
+
 
