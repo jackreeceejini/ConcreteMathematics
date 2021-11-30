@@ -1,4 +1,6 @@
 #Concrete Mathematics
+import math as m
+
 def hanoi(n_disks):
     """Number of moves to move n_disks
     in the tower of Hanoi problem
