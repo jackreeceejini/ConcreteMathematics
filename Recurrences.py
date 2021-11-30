@@ -65,5 +65,18 @@ def josephus(n_people):
 # print("josephus(n_people): ", josephus(6))
 # print("josephus(n_people): ", josephus(7))
 
+def comparisons(n):
+    """
+    The total number of comparisons
+    needed to recursively sort
+    n records by halving the input
+    and subsequently merging it
+    to its final sorted form
+    """
+    if n == 1:
+        return 0
+    return comparisons(m.ceil(n/2)) + comparisons(m.floor(n/2)) + n - 1
+
+
 
 
