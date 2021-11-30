@@ -1,5 +1,5 @@
 #Concrete Mathematics
-import math as m
+import math
 
 def hanoi(n_disks):
     """Number of moves to move n_disks
@@ -77,7 +77,30 @@ def comparisons(n):
     """
     if n == 1:
         return 0
-    return comparisons(m.ceil(n/2)) + comparisons(m.floor(n/2)) + n - 1
+    return comparisons(math.ceil(n/2)) + comparisons(math.floor(n/2)) + n - 1
+
+
+def distribute(n_things, m_groups,result=[]):
+    """
+    partition n things into m groups
+    as equally as possible
+    """
+    if m_groups == 1:
+        return
+    things_group = math.ceil(n_things/m_groups)
+    n_next = n_things - things_group 
+    result.append((n_next,things_group))
+    m_next = m_groups - 1
+    distribute(n_next, m_next, result)
+    return result
+
+def gcd(m,n):
+    if m == 0:
+        return n
+    return gcd(n % m, m)
+
+
+
 
 
 
