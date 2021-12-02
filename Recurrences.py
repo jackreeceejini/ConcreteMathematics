@@ -104,6 +104,7 @@ def sterling_second(n,k):
     Stirling numbers of the second kind
     The number of ways to partition 
     a set of n things into k nonempty subsets.
+    #todo: make it work for negative numbers 
     """
     if n == 0 or k == 0:
         if k == 0 and n != 0:
