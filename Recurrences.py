@@ -121,7 +121,28 @@ def sterling_second(n,k):
 #             print(sterling_second(n,k), end=" ")
 #         print()
 
+def sterling_first(n,k):
+    """
+    Stirling numbers of the first kind
+    counts the number of ways to arrange n objects into k
+    cycles instead of subsets. We verbalize by saying n cycle k."
+    """
+    if n == 0 or k == 0:
+        if k == 0 and n != 0:
+            return 0
+        if n == 0 and k != 0:
+            return 0
+        if n == 0 and k == 0:
+            return 1
+    return (n - 1)* sterling_first(n - 1, k) + sterling_first(n - 1, k - 1)
 
+
+# if __name__ == "__main__":
+#     for n in range(10):
+#         for k in range(0,n + 1):
+#             print(sterling_first(n,k), end=" ")
+#         print()
+    
 
 
 
