@@ -1,4 +1,13 @@
-#Concrete Mathematics
+"""
+A collection of recurrences that I found nice from
+Concrete Mathematics by Knuth Patashnik. 
+
+If you want to get used to recursion I suggest
+you study some of these functions. They're cool!!
+
+Author: Ogah Jackreece Ejini
+"""
+
 import math
 
 def hanoi(n_disks):
