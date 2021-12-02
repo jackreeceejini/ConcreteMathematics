@@ -99,6 +99,28 @@ def gcd(m,n):
         return n
     return gcd(n % m, m)
 
+def sterling_second(n,k):
+    """
+    Stirling numbers of the second kind
+    The number of ways to partition 
+    a set of n things into k nonempty subsets.
+    """
+    if n == 0 or k == 0:
+        if k == 0 and n != 0:
+            return 0
+        if n == 0 and k != 0:
+            return 0
+        if n == 0 and k == 0:
+            return 1
+    return k * sterling_second(n - 1, k) + sterling_second(n - 1, k - 1)
+
+
+# if __name__ == "__main__":
+#     for n in range(10):
+#         for k in range(0,n + 1):
+#             print(sterling_second(n,k), end=" ")
+#         print()
+
 
 
 
