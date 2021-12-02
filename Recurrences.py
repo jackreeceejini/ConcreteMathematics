@@ -177,5 +177,33 @@ def euler(n,k):
 #         print()
 
 
+def euler_secondorder(n,k):
+    """
+    If we form permutations of the
+    multiset {1,1,2,2,...,n,n} with
+    the special property that all numbers
+    between between the two occurences of
+    m are greater than m, for 1 <= m <= n, then
+    euler_secondorder(n,k) is the number of
+    such permutations that have k ascents.
 
+    Eg. There are eight suitable single-ascent
+    permutations of {1,1,2,2,3,3}
+    """
+    if n == 0:
+        if k == 0:
+            return 1
+        else:
+            return 0
+    if k < 0:
+        return 0
+    return (k + 1)* euler_secondorder(n - 1, k) + ((2*n) - 1 - k) * euler_secondorder(n - 1, k - 1)
+
+
+# if __name__ == "__main__":
+#     for n in range(10):
+#         for k in range(0,n + 1):
+#             print(euler_secondorder(n,k), end=" ")
+#         print()
+    
 
