@@ -144,7 +144,28 @@ def sterling_first(n,k):
 #             print(sterling_first(n,k), end=" ")
 #         print()
     
+def euler(n,k):
+    """
+    Counts the number of permutations
+    P1P2....Pn of {1,2,...,n} that have
+    k ascents, namely, k places where
+    Pj < Pj+1
+    """
+    if n == 0:
+        if k == 0:
+            return 1
+        else:
+            return 0
+    if k < 0:
+        return 0
+    return (k + 1)* euler(n - 1, k) + (n - k) * euler(n - 1, k - 1)
 
+
+# if __name__ == "__main__":
+#     for n in range(10):
+#         for k in range(0,n + 1):
+#             print(euler(n,k), end=" ")
+#         print()
 
 
 
